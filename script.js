@@ -13,3 +13,15 @@ for (let i=0; i<16; i++){
     }
     container.appendChild(divRow);
 }
+
+///this part doesn't work yet.
+const allDivs = document.querySelectorAll('squareDiv');
+console.log(allDivs);
+allDivs.forEach(function(div){
+    console.log("meh?");
+    div.addEventListener('mouseover', function(e){
+        console.log("howdy");
+        e.classList.toggle("activeMouse")
+    })
+});
+  

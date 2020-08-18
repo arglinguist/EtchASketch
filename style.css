@@ -4,9 +4,9 @@
     height: 50px;
     width: 50px;
     color: blue;
-    background-color: pink;
+   
 }
 
-.active {
+.activeMouse {
     background-color: green;
 }
