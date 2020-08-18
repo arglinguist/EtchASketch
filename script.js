@@ -2,7 +2,7 @@ let container = document.getElementById("container");
 
 for (let i=0; i<16; i++){
     let divRow = document.createElement('div');
-    divRow.classList.add("squareDiv"); //might need to be removed?
+    divRow.classList.add("rowDiv"); //might need to be removed?
     
     for(let n=0; n<16; n++){
         let divColumn = document.createElement('div');
@@ -14,19 +14,30 @@ for (let i=0; i<16; i++){
     container.appendChild(divRow);
 }
 
+
+//NOTHING BELOW THIS LINE WORKS YET
 function activateDiv(div){
     console.log(div);
     //div.classList.toggle("activeMouse");
     console.log("Activate!");
 }
 
-let allDivs = document.getElementsByClassName('squareDiv');
+let containerDiv = document.getElementById('container');
+let divList = containerDiv.childNodes;
 
-console.log(allDivs[0]); //it's a nodelist - success on that piece.
-
+divList.forEach( 
+    function(currentValue, currentIndex, listObj) { 
+        console.log(currentValue + ', ' + currentIndex + ', ' + this); 
+    },
+    'test'
+);
+/*
 for (let i=0; i<allDivs.length; i++){
-    allDivs[i].classList.toggle("activeMouse");
+    console.log(allDivs[i]);
+    // allDivs[i].classList.toggle("activeMouse");
 }
+*/
+
 
 /*
 allDivs.forEach(function(div) {
@@ -38,6 +49,7 @@ allDivs.forEach(function(div) {
 //allDivs.forEach(div==>activateDiv(this));
 ///this part doesn't work yet.
 
+/*
 
 allDivs.forEach(function(){
     this.addEventListener("mouseover", console.log('test'));
@@ -52,4 +64,4 @@ allDivs.forEach(function(){
  //       e.classList.toggle("activeMouse")
  //   })
 });
-  
+  */
