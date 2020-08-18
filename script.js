@@ -14,14 +14,42 @@ for (let i=0; i<16; i++){
     container.appendChild(divRow);
 }
 
+function activateDiv(div){
+    console.log(div);
+    //div.classList.toggle("activeMouse");
+    console.log("Activate!");
+}
+
+let allDivs = document.getElementsByClassName('squareDiv');
+
+console.log(allDivs[0]); //it's a nodelist - success on that piece.
+
+for (let i=0; i<allDivs.length; i++){
+    allDivs[i].classList.toggle("activeMouse");
+}
+
+/*
+allDivs.forEach(function(div) {
+    console.log("eh?");
+    div.textContent="hiiiii!";
+    container.appendChild(div);
+}); 
+*/
+//allDivs.forEach(div==>activateDiv(this));
 ///this part doesn't work yet.
-const allDivs = document.querySelectorAll('squareDiv');
-console.log(allDivs);
-allDivs.forEach(function(div){
+
+
+allDivs.forEach(function(){
+    this.addEventListener("mouseover", console.log('test'));
     console.log("meh?");
-    div.addEventListener('mouseover', function(e){
-        console.log("howdy");
-        e.classList.toggle("activeMouse")
-    })
+    this.onmouseover = console.log("howdy");
+    //console.log("howdy");function(){
+   //    console.log("howdy");
+   //     e.classList.toggle("activeMouse")
+   // }
+   // div.addEventListener('mouseover', function(e){
+ //       console.log("howdy");
+ //       e.classList.toggle("activeMouse")
+ //   })
 });
   
