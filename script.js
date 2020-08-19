@@ -15,64 +15,12 @@ for (let i=0; i<16; i++){
 }
 
 
-//NOTHING BELOW THIS LINE WORKS YET
+let divList=Array.from(document.getElementsByClassName('squareDiv'));
+
+divList.forEach(div=>div.addEventListener('mouseover', e => {
+    activateDiv(div);
+  }));
+
 function activateDiv(div){
-    console.log(div);
-    //div.classList.toggle("activeMouse");
-    console.log("Activate!");
+    div.classList.add("activeMouse");
 }
-
-let divList=document.getElementsByClassName('squareDiv');
-
-for(let i=0; i<divList.length; i++){
-    console.log(divList[i].textContent);
-}
-
-
-/*
-let containerDiv = document.getElementById('container');
-let divList = containerDiv.childNodes;
-
-divList.forEach( 
-    function(currentValue, currentIndex, listObj) { 
-        console.log(currentValue + ', ' + currentIndex); 
-        currentIndex.onmouseover=console.log('hi');
-    },
-);
-*/
-
-
-/*
-for (let i=0; i<allDivs.length; i++){
-    console.log(allDivs[i]);
-    // allDivs[i].classList.toggle("activeMouse");
-}
-*/
-
-
-/*
-allDivs.forEach(function(div) {
-    console.log("eh?");
-    div.textContent="hiiiii!";
-    container.appendChild(div);
-}); 
-*/
-//allDivs.forEach(div==>activateDiv(this));
-///this part doesn't work yet.
-
-/*
-
-allDivs.forEach(function(){
-    this.addEventListener("mouseover", console.log('test'));
-    console.log("meh?");
-    this.onmouseover = console.log("howdy");
-    //console.log("howdy");function(){
-   //    console.log("howdy");
-   //     e.classList.toggle("activeMouse")
-   // }
-   // div.addEventListener('mouseover', function(e){
- //       console.log("howdy");
- //       e.classList.toggle("activeMouse")
- //   })
-});
-  */
