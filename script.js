@@ -22,15 +22,26 @@ function activateDiv(div){
     console.log("Activate!");
 }
 
+let divList=document.getElementsByClassName('squareDiv');
+
+for(let i=0; i<divList.length; i++){
+    console.log(divList[i].textContent);
+}
+
+
+/*
 let containerDiv = document.getElementById('container');
 let divList = containerDiv.childNodes;
 
 divList.forEach( 
     function(currentValue, currentIndex, listObj) { 
-        console.log(currentValue + ', ' + currentIndex + ', ' + this); 
+        console.log(currentValue + ', ' + currentIndex); 
+        currentIndex.onmouseover=console.log('hi');
     },
-    'test'
 );
+*/
+
+
 /*
 for (let i=0; i<allDivs.length; i++){
     console.log(allDivs[i]);
