@@ -1,8 +1,18 @@
-
-
 let container = document.getElementById("container");
+//let clearButton = document.querySelector("clear");
+let blackButton= document.getElementById("noColor");
+let colorButton= document.getElementById("pickColor");
+let rbgButton= document.getElementById("randomColor");
+
+document.getElementById('clear').addEventListener('click', ()=> //things were working well before this was added...
+    { console.log("hi");
+    generateGrid(getSize());
+    divList=Array.from(document.getElementsByClassName('squareDiv'));
+    });
+
 
 function generateGrid(selectedSize){
+    container.textContent="";
     for (let i=0; i<selectedSize; i++){
         let divRow = document.createElement('div');
         divRow.classList.add("rowDiv"); //might need to be removed?
@@ -18,9 +28,7 @@ function generateGrid(selectedSize){
     }
 }
 
-generateGrid(100);
-let selectedColor = "black";
-
+let selectedColor = "blue";
 let divList=Array.from(document.getElementsByClassName('squareDiv'));
 
 divList.forEach(div=>div.addEventListener('mouseover', e => {
@@ -31,7 +39,10 @@ function activateDiv(div, color){
     div.style.backgroundColor=`${color}`;
 }
 
-
+function getSize(){
+    let newSize = prompt ("What size grid would you like?"); //add tests to set limits on input here
+    return newSize;
+}
 
     //div.classList.add("activeMouse");
 //    div.classList.add("activeMouseBlack");
