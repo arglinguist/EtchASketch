@@ -8,7 +8,7 @@ for (let i=0; i<16; i++){
         let divColumn = document.createElement('div');
         divColumn.classList.add("squareDiv");
         divColumn.setAttribute('style', 'float: left');
-        divColumn.textContent=(i+1)*(n+1);
+        //divColumn.textContent=(i+1)*(n+1);
         container.appendChild(divColumn);
     }
     container.appendChild(divRow);
