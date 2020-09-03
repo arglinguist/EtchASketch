@@ -24,24 +24,25 @@ button{
 .rowDiv{
     margin: 0px;
     padding: 0px;
-    height: 20px;
+    height: 5px;
    
 }
 .squareDiv{
     margin: 0px;
     padding: 0px;
-    height: 20px;
-    width: 20px;
+    height: 5px;
+    width: 5px;
     color: blue;
    
 }
 #container{
-    width: 320px;
+    margin: auto;
+    margin-top: 20px;
+    width: fit-content;
     border-color: black;
     display: block;
     border-style: solid;
     border-width: 2px;
-    margin: auto;
 }
 .activeMouseBlack {
     background-color: black;
