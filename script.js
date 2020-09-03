@@ -17,8 +17,10 @@ for (let i=0; i<16; i++){
 
 let divList=Array.from(document.getElementsByClassName('squareDiv'));
 
+let selectedColor = prompt("What color do you want?");
+
 divList.forEach(div=>div.addEventListener('mouseover', e => {
-    activateDiv(div,"black");
+    activateDiv(div,selectedColor);
   }));
 
 function activateDiv(div, color){
