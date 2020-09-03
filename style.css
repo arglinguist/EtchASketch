@@ -1,6 +1,14 @@
 body{
     background-color: white;
 }
+
+h1{
+    text-align: center;
+}
+#controls{
+    text-align: center;
+}
+
 .rowDiv{
     margin: 0px;
     padding: 0px;
