@@ -18,15 +18,18 @@ for (let i=0; i<16; i++){
 let divList=Array.from(document.getElementsByClassName('squareDiv'));
 
 divList.forEach(div=>div.addEventListener('mouseover', e => {
-    activateDiv(div);
+    activateDiv(div,"black");
   }));
 
-function activateDiv(div){
-    div.style.backgroundColor="red";
+function activateDiv(div, color){
+    div.style.backgroundColor=`${color}`;
+}
+
+
+
     //div.classList.add("activeMouse");
 //    div.classList.add("activeMouseBlack");
  /*   let R = (Math.floor(Math.random()*256));
     let G = (Math.floor(Math.random()*256));
     let B= (Math.floor(Math.random()*256));
     div.css('background-color', 'rgb(' + R + ',' + G + ',' + B + ')');   */
-}
