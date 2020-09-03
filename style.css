@@ -4,6 +4,18 @@ body{
 
 h1{
     text-align: center;
+    font-family: cursive;
+}
+
+button{
+    background-color: white;
+    color: grey;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border-width: 3px;
+    margin: 5px;
+    border-color: grey;
 }
 #controls{
     text-align: center;
