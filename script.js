@@ -22,9 +22,9 @@ divList.forEach(div=>div.addEventListener('mouseover', e => {
   }));
 
 function activateDiv(div){
-    //this.css('background-color', 'blue');
+    div.style.backgroundColor="red";
     //div.classList.add("activeMouse");
-    div.classList.add("activeMouseBlack");
+//    div.classList.add("activeMouseBlack");
  /*   let R = (Math.floor(Math.random()*256));
     let G = (Math.floor(Math.random()*256));
     let B= (Math.floor(Math.random()*256));
