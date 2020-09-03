@@ -18,7 +18,7 @@ function generateGrid(selectedSize){
     }
 }
 
-generateGrid(32);
+generateGrid(100);
 let selectedColor = "black";
 
 let divList=Array.from(document.getElementsByClassName('squareDiv'));
