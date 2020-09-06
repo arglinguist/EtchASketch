@@ -1,15 +1,20 @@
-let container = document.getElementById("container");
-//let clearButton = document.querySelector("clear");
-let blackButton= document.getElementById("noColor");
-let colorButton= document.getElementById("pickColor");
-let rbgButton= document.getElementById("randomColor");
+let container = document.getElementById("container"),
+    clearButton = document.querySelector("clear"),
+    blackButton= document.getElementById("noColor"),
+    colorButton= document.getElementById("pickColor"),
+    rbgButton= document.getElementById("randomColor"),
+    selectedColor = "blue",
+    divList=Array.from(document.getElementsByClassName('squareDiv'));
+    
+clearButton.addEventListener('click', generateGrid(getSize()));
 
+    /*
 document.getElementById('clear').addEventListener('click', ()=> //things were working well before this was added...
     { console.log("hi");
     generateGrid(getSize());
     divList=Array.from(document.getElementsByClassName('squareDiv'));
     });
-
+*/
 
 function generateGrid(selectedSize){
     container.textContent="";
@@ -28,8 +33,6 @@ function generateGrid(selectedSize){
     }
 }
 
-let selectedColor = "blue";
-let divList=Array.from(document.getElementsByClassName('squareDiv'));
 
 divList.forEach(div=>div.addEventListener('mouseover', e => {
     activateDiv(div,selectedColor);
