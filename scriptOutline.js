@@ -40,6 +40,11 @@ function activateDiv(currentDiv, color){ // changes background color of given di
 function selectColor(){
     selectedColor=(prompt("what color would you like?"));
 }
+
+function selectRandomColor(){
+    let rbg = (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256));
+    selectedColor=`rgb(${rbg})`;
+}
 //ORDER THAT ITEMS ARE CALLED
 generateGrid(50); // (A) creates initial grid of 50x50
 
@@ -52,17 +57,14 @@ blackButton.addEventListener('click', function(){ // changes selectedColor to bl
     selectedColor='black';
 });
 
-colorButton.addEventListener('click', function(){ // changes selectedColor to black
+rbgButton.addEventListener('click', function(){ // changes selectedColor to random color
+    selectRandomColor();
+});
+
+colorButton.addEventListener('click', function(){ // changes selectedColor to user-inputted color (could use pop up palette window instead)
     selectColor();
 });
 
 divList.forEach(div=>div.addEventListener('mouseover', e => { //changes color on mouseover
     activateDiv(div,selectedColor);
   }));
-// ----- Clear button (reset grid size, erase previous)
-// ----- Black button (reset selectedColor to black
-// ----- Color button (reset selectedColor to color of user's choice 
-//       either by a rgb selection menu or by inputting string 
-//       for color name
-// ----- Random button (reset selectedColor to change to random rgb 
-//       color for every square it passes... 
