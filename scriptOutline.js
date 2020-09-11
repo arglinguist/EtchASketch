@@ -2,7 +2,6 @@
 
 
 // TO DO
-// (1) Figure out wtf is making it get slower on every generateGrid (esp of larger sizes) -- why doesn't clearing innerHTML fix this?
 // (2) make background UI prettier
 // (3) optional drop-down menu for color selection
 // (4) fancy-up those buttons on click
@@ -36,14 +35,15 @@ function generateGrid (dimensions) {  // generates a square grid in container of
         }
         container.appendChild(divRow);
     }
+    listenArray();
+}
 
+function listenArray(){ 
     divList=Array.from(document.getElementsByClassName('squareDiv'));
     divList.forEach(div=>div.addEventListener('mouseover', e => { //changes color on mouseover
         activateDiv(div,selectedColor);
       }));
-    return;
 }
-
 function activateDiv(currentDiv, color){ // changes background color of given div to color indicated
     currentDiv.style.backgroundColor=`${color}`;
 }
