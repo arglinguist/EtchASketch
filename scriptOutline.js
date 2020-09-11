@@ -37,16 +37,21 @@ function activateDiv(div, color){ // changes background color of given div to co
     div.style.backgroundColor=`${color}`;
 }
 
-
 //ORDER THAT ITEMS ARE CALLED
-generateGrid(50); //creates initial grid of 50x50
-divList.forEach(div=>div.addEventListener('mouseover', e => {
+generateGrid(50); // (A) creates initial grid of 50x50
+
+// (B) event listeners 
+clearButton.addEventListener('click', function(){ // *****STICKING POINT**** recreates grid on click, but mouseover doesnt work now...
+    generateGrid(20);
+});
+
+blackButton.addEventListener('click', function(){ // changes selectedColor
+    selectedColor='black';
+});
+
+divList.forEach(div=>div.addEventListener('mouseover', e => { //changes color on mouseover
     activateDiv(div,selectedColor);
   }));
-// (B) event listeners for buttons
-clearButton.addEventListener('click', function(){ //identify that button works
-    console.log("clearly");
-});
 // ----- Clear button (reset grid size, erase previous)
 // ----- Black button (reset selectedColor to black
 // ----- Color button (reset selectedColor to color of user's choice 
