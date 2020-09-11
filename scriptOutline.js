@@ -1,19 +1,14 @@
 // reduce global variables -- how to localize DOM variables and still have event listeners???? What about keeping listeners in HTML and calling funcitons as needed (onClick)
 
-//ALL DOM VARIABLES
-
-let clearButton = document.querySelector("clear"),
+//GLOBAL VARIABLES
+let clearButton = document.getElementById("clear"),
     blackButton= document.getElementById("noColor"),
     colorButton= document.getElementById("pickColor"),
     rbgButton= document.getElementById("randomColor"),
-    divList= [];
-
-// GLOBAL VARIABLES (test)
+    divList= [],
     selectedColor = "pink";
     
-
 //FUNCTIONS
-
 function generateGrid(dimensions){  // generates a square grid in container of size (dimensions)x(dimensions)
     let container = document.getElementById("container"),
         divRow,
@@ -38,14 +33,9 @@ function generateGrid(dimensions){  // generates a square grid in container of s
     return;
 }
 
-function activateDiv(div, color){
+function activateDiv(div, color){ // changes background color of given div to color indicated
     div.style.backgroundColor=`${color}`;
-    console.log("activated");
 }
-
-// (b) change background of div based on selectedColor 
-//     (accepted as parameter? Or global value?)
-
 
 
 //ORDER THAT ITEMS ARE CALLED
@@ -54,6 +44,9 @@ divList.forEach(div=>div.addEventListener('mouseover', e => {
     activateDiv(div,selectedColor);
   }));
 // (B) event listeners for buttons
+clearButton.addEventListener('click', function(){ //identify that button works
+    console.log("clearly");
+});
 // ----- Clear button (reset grid size, erase previous)
 // ----- Black button (reset selectedColor to black
 // ----- Color button (reset selectedColor to color of user's choice 
