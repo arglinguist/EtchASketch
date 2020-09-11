@@ -6,9 +6,10 @@ let clearButton = document.querySelector("clear"),
     blackButton= document.getElementById("noColor"),
     colorButton= document.getElementById("pickColor"),
     rbgButton= document.getElementById("randomColor"),
-    divList=Array.from(document.getElementsByClassName('squareDiv'));
+    divList= [];
+
 // GLOBAL VARIABLES (test)
-    selectedColor = "blue";
+    selectedColor = "pink";
     
 
 //FUNCTIONS
@@ -33,33 +34,25 @@ function generateGrid(dimensions){  // generates a square grid in container of s
         }
         container.appendChild(divRow);
     }
+    divList=Array.from(document.getElementsByClassName('squareDiv'));
     return;
 }
-console.log("hi there");
 
-generateGrid(20);
+function activateDiv(div, color){
+    div.style.backgroundColor=`${color}`;
+    console.log("activated");
+}
 
 // (b) change background of div based on selectedColor 
 //     (accepted as parameter? Or global value?)
-/*function generateGrid(selectedSize){
-    container.textContent="";
-    for (let i=0; i<selectedSize; i++){
-        let divRow = document.createElement('div');
-        divRow.classList.add("rowDiv"); //might need to be removed?
-        
-        for(let n=0; n<selectedSize; n++){
-            let divColumn = document.createElement('div');
-            divColumn.classList.add("squareDiv");
-            divColumn.setAttribute('style', 'float: left');
-            //divColumn.textContent=(i+1)*(n+1);
-            container.appendChild(divColumn);
-        }
-        container.appendChild(divRow);
-    }
-}*/
+
+
 
 //ORDER THAT ITEMS ARE CALLED
-// (A) initialize basic grid  
+generateGrid(50); //creates initial grid of 50x50
+divList.forEach(div=>div.addEventListener('mouseover', e => {
+    activateDiv(div,selectedColor);
+  }));
 // (B) event listeners for buttons
 // ----- Clear button (reset grid size, erase previous)
 // ----- Black button (reset selectedColor to black
