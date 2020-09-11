@@ -33,10 +33,13 @@ function generateGrid(dimensions){  // generates a square grid in container of s
     return;
 }
 
-function activateDiv(div, color){ // changes background color of given div to color indicated
-    div.style.backgroundColor=`${color}`;
+function activateDiv(currentDiv, color){ // changes background color of given div to color indicated
+    currentDiv.style.backgroundColor=`${color}`;
 }
 
+function selectColor(){
+    selectedColor=(prompt("what color would you like?"));
+}
 //ORDER THAT ITEMS ARE CALLED
 generateGrid(50); // (A) creates initial grid of 50x50
 
@@ -45,8 +48,12 @@ clearButton.addEventListener('click', function(){ // *****STICKING POINT**** rec
     generateGrid(20);
 });
 
-blackButton.addEventListener('click', function(){ // changes selectedColor
+blackButton.addEventListener('click', function(){ // changes selectedColor to black
     selectedColor='black';
+});
+
+colorButton.addEventListener('click', function(){ // changes selectedColor to black
+    selectColor();
 });
 
 divList.forEach(div=>div.addEventListener('mouseover', e => { //changes color on mouseover
